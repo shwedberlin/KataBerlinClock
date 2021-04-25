@@ -9,31 +9,19 @@ namespace BerlinClock
         static void Main(string[] args)
         {
             var berlinClock = new BerlinClock();
+            Console.WriteLine("Please enter time in hh:mm:ss");
 
-            while (true)
+            var input = Console.ReadLine();
+            try
             {
-                berlinClock = new BerlinClock();
-                Console.WriteLine("Please enter time in hh:mm:ss or type 'exit'");
-                
-                var input = Console.ReadLine();
-                Console.WriteLine();
-
-                if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
-                {
-                    return;
-                }
-
-                try
-                {
-                    berlinClock.SetTime(input);
-                }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e);
-                    continue;
-                }
-                Console.WriteLine($"Your time in Berlin Clock format is: {Environment.NewLine}{berlinClock.ToString()}");
+                berlinClock.SetTime(input);
             }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                return;
+            }
+            Console.WriteLine($"Your time in Berlin Clock format is: {Environment.NewLine}{berlinClock.ToString()}");
         }
     }
 }
