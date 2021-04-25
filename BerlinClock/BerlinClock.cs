@@ -19,13 +19,13 @@ namespace BerlinClock
             SecondSegment = new ClockSegment("Y");
         }
 
-        public string ToString()
+        public override string ToString()
         {
             return $"{SecondSegment.Display}{Environment.NewLine}"+
                    $"{FiveHourSegment.Display}{Environment.NewLine}" +
                    $"{OneHourSegment.Display}{Environment.NewLine}" +
                    $"{FiveMinuteSegment.Display}{Environment.NewLine}" +
-                   $"{OneMinuteSegment.Display}{Environment.NewLine}" +;
+                   $"{OneMinuteSegment.Display}{Environment.NewLine}";
         }
 
         public void SetTime(string time)
