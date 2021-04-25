@@ -6,7 +6,12 @@ namespace BerlinClock
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var berlinClock = new BerlinClock();
+            Console.WriteLine("Please enter time in hh:mm:ss...");
+            var time = Console.ReadLine("Please enter time in hh:mm:ss...");
+
+            berlinClock.SetTime(time);
+            Console.WriteLine($"Your time in Berlin Clock format is: {Environment.NewLine}{berlinClock.ToString()}");
         }
     }
 }
