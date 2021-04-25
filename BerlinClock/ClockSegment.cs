@@ -5,7 +5,7 @@
         public string Mask { get; }
         public string Display { get; private set; }
 
-        private const char OFF = 'O';
+        internal const char OFF = 'O';
         private int SegmentLength;
 
         public ClockSegment(string mask)
